@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div class="container">
+    <h2>Student Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="role" id="label-role">
+            Which option best describes you?
+        </label>
+         
+        <select name="role" id="role">
+            <option value="student">Student</option>
+            <option value="intern">Intern</option>
+            <option value="professional">
+                Professional
+            </option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+      <div class="form-group">
+        <label for="grade">Grade:</label>
+        <label><input type="radio" name="grade" value="A"> A</label>
+        <label><input type="radio" name="grade" value="B"> B</label>
+        <label><input type="radio" name="grade" value="C"> C</label>
+      </div>
+  
+      <div class="form-group">
+        <label for="language">Language:</label>
+        <label><input type="checkbox" name="language" value="C"> C</label>
+        <label><input type="checkbox" name="language" value="CPP"> CPP</label>
+        <label><input type="checkbox" name="language" value="Java"> Java</label>
+        <label><input type="checkbox" name="language" value="Python"> Python</label>
+        <label><input type="checkbox" name="language" value="Spring"> Spring</label>
+        <label><input type="checkbox" name="language" value="React"> React</label>
+        <label><input type="checkbox" name="language" value="Angular"> Angular</label>
+        <label><input type="checkbox" name="language" value="JavaScript"> JavaScript</label>
+      </div>
+
+    
+    <div class="form-group">
+        <label for="comment">  Any comments or suggestions </label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+      </div>
+  
+      <button type="submit" id="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
