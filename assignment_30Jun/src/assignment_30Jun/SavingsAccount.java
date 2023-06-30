@@ -1,31 +1,43 @@
 package assignment_30Jun;
 
-class SavingsAccount implements Account {
- private double balance;
- private double interestRate;
+public class SavingsAccount implements Account {
+	
+	private double balance;
+	
+	public SavingsAccount(double initialBalance) {
+		this.balance = initialBalance;
+	}
+	
+	@Override
+	public void deposit(double amount) {
+		// TODO Auto-generated method stub
+		balance += amount;
+		System.out.println("Deposit successful. New balance: " + balance);
+	}
 
- public SavingsAccount(double initialDeposit, double interestRate) {
-     this.balance = initialDeposit;
-     this.interestRate = interestRate;
- }
+	@Override
+	public void withdraw(double amount) {
+		// TODO Auto-generated method stub
+		if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. New balance: " + balance);
+        } else {
+            System.out.println("Insufficient funds. Withdrawal failed.");
+        }
+	}
 
- @Override
- public void deposit(double amount) {
-     balance += amount;
- }
+	@Override
+	public double getBalance() {
+		// TODO Auto-generated method stub
+		System.out.println("Current balance: " + balance);
+		return balance;
+	}
+	
+	 public double calculateInterest() {
+	        double interestRate = 0.07;
+	        double interest = balance * interestRate;
+	        System.out.println("Calculated interest: " + interest);
+	        return interest;
+	    }
 
- @Override
- public void withdraw(double amount) {
-     balance -= amount;
- }
-
- @Override
- public double getBalance() {
-     return balance;
- }
-
- // Applying interest rate 1.25% for 1 year: 
- public void applyInterest() {
-     balance += balance * interestRate/100;
- }
 }
