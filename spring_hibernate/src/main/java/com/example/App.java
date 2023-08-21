@@ -1,7 +1,6 @@
 package com.example;
 
 import com.example.config.SpringConfig;
-
 import com.example.entity.Product;
 import com.example.service.CarService;
 import com.example.service.ProductService;
@@ -21,12 +20,11 @@ public class App {
       context = new AnnotationConfigApplicationContext(SpringConfig.class);
       CarService carService = context.getBean("carService", CarService.class);
       carService.createCar("BMW", "Black");
-      carService.createCar("Audi", "Black");
-      carService.createCar("Mercedes Benz", "Red");
+      carService.createCar("Audi", "White");
+      carService.createCar("Mercedes", "Red");
       carService.listCars();
       carService.findCarById(2);
-      carService.updateCar(2, "Audi", "Blue");
-      carService.updateCar(1, "Maruti", "Blue");
+      carService.updateCar(2, "Audi", "OceanBlue");
       carService.deleteCar(3);
       carService.listCars();
     } catch (Exception e) {
@@ -42,7 +40,7 @@ public class App {
         "productService",
         ProductService.class
       );
-      Product product = productService.createProduct("Laptop", 100, 1);
+      Product product = productService.createProduct("Laptop", 1000, 10);
       System.out.println(product);
       productService.saveProduct(product);
       System.out.println(productService.listProducts());
